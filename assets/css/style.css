@@ -106,7 +106,7 @@ img {
     .navbar {
         min-height: 100vh;
         width: var(--sidbar-width);
-        background: linear-gradient(var(--color-brand), var(--color-brand2)), url(../images/Circuits.jpg);
+        background: linear-gradient(var(--color-brand), var(--color-brand2));
         background-size: cover;
         background-position: center;
     }
