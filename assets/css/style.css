@@ -1,13 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@400;500;600;700&display=swap');
+
 :root {
     --color-body: #f87676;
     --color-heading: #333333;
     --color-base: #ffbf9f;
-    /* Softer orange base color */
     --color-brand: #f7ddc0;
-    /* Gentle yellow brand color */
     --color-brand2: #f7a7a7;
-    --sidbar-width: 240px;
+    --sidebar-width: 240px; /* Corrected variable name */
     --font-base: "Bai Jamjuree";
 }
 
@@ -20,12 +19,7 @@ body {
     background-attachment: fixed;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h1, h2, h3, h4, h5, h6 {
     color: var(--color-heading);
     font-weight: 700;
 }
@@ -60,7 +54,7 @@ img {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding-top: 80px;
+    padding-top: 80px; /* Added top padding to avoid navbar overlap */
     padding-bottom: 80px;
     border-bottom: 2px solid rgba(255, 255, 255, 0.1);
 }
@@ -86,6 +80,7 @@ img {
 
 .navbar {
     background-color: var(--color-base);
+    z-index: 1000; /* Added z-index */
 }
 
 .navbar .nav-link {
@@ -105,16 +100,16 @@ img {
 @media (min-width: 992px) {
     .navbar {
         min-height: 100vh;
-        width: var(--sidbar-width);
-        background: linear-gradient(var(--color-brand), var(--color-brand2));
+        width: var(--sidebar-width); /* Corrected variable width */
+        background: linear-gradient(var(--color-brand), var(--color-brand2)), url(../images/Circuits.jpg);
         background-size: cover;
         background-position: center;
     }
     .navbar-brand img {
-        border: 4px solid var(--color-brand2)
+        border: 4px solid var(--color-brand2);
     }
     #content-wrapper {
-        padding-left: var(20px);
+        padding-left: var(--sidebar-width); /* Corrected padding */
     }
 }
 
@@ -180,18 +175,15 @@ img {
     color: var(--color-brand);
 }
 
-
 /* CARD CUSTOM */
 
 .card-custom .card-custom-content {
     flex: 1;
-    /* Allow content to grow to fill available space */
 }
 
 .card-custom .card-custom-image img {
     transition: all 0.4s ease;
     max-width: 100%;
-    /* Make sure the image doesn't overflow its parent */
     height: auto;
 }
 
@@ -205,48 +197,29 @@ img {
     justify-content: center;
 }
 
-
-/* Adjust padding and font size for the job descriptor container */
-
 .job-descriptor .card-custom-content {
     padding: 10px;
-    /* Adjust the padding as needed */
     font-size: 14px;
-    /* Adjust the font size as needed */
 }
 
-
-/* Add space between each bullet point and increase font size */
-
 .work-bullet-points li {
-    margin-bottom: 10 px;
-    /* Adjust spacing as needed */
+    margin-bottom: 10px;
     font-size: 16px;
-    /* Adjust font size as needed */
 }
 
 .work-bullet-points li strong {
     font-size: 17px;
-    /* Adjust font size as needed */
     font-weight: bold;
-    /* Bolden the emphasized text */
     display: inline-block;
-    /* Ensure proper alignment of emphasized text */
     margin-right: 5px;
-    /* Add a small margin to the right for spacing */
 }
-
-
-/* Add style for the larger "Read More" link */
 
 .link-custom.larger-link {
     font-size: 18px;
-    /* Adjust font size as needed */
     display: block;
     margin-top: auto;
     text-align: center;
 }
-
 
 /* CONTACT */
 
@@ -268,7 +241,6 @@ img {
 #contact input.form-control {
     height: 44px;
 }
-
 
 /* SOCIAL ICONS */
 
